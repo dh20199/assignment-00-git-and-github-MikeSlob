@@ -1,0 +1,14 @@
+{
+  "firstName": "Michael",
+  "lastName": "Sloboda",
+  "nickName": "Sloboda",
+  "privateName": false,
+  "picture": "images/MikeSlob.jpg",
+  "privatePicture": false,
+  "email": "michael.sloboda@mail.utoronto.ca",
+  "privateEmail": false,
+  "github": "MikeSlob",
+  "privateGithub": false,
+  "superpower" : "organizing paperwork",
+  "academicinterests": "learning how the world works"
+}
