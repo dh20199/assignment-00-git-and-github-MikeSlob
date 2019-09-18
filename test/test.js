@@ -1,6 +1,7 @@
 'use strict';
 
-const path = require('path');
+const path = require('path'),
+      shell = require('shelljs');
 const gitCommits = require('git-commits'), fs=require('fs'), hwc=require('html-word-count'),
       gitConfig = require('git-config'), gitState = require('git-state'), jsonLint = require('jsonlint');
 
@@ -25,7 +26,7 @@ var name,email,githubid;
 
 gitConfig(function (err, config) {
   if (err) return done(err); 
-  console.log(config);
+  // console.log(config);
   if (config.user.name) { name = config.user.name; }
   if (config.user.email) { email = config.user.email; }
   if (config.github.user) { githubid = config.github.user; }
@@ -148,7 +149,7 @@ describe('Image Checks', function() {
 describe('Reflection Checks (not required unless you are attempting an "A" grade!)', function() {
   if (process.env.MARKING = 'instructor' ) {
     githubid = shell.exec('git rev-parse --abbrev-ref HEAD').match(/^(\w+)-/)[1];
-    //console.log(githubid + 'HERE I AM');
+    // console.log('reflection:' + githubid + 'HERE I AM');
   }
   let r = `Reflection/${githubid}.md`;
   it(`Reflection file ${r} should exist`, function() {
